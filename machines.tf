@@ -25,12 +25,12 @@ resource "azurerm_virtual_machine" "jenkinsVM" {
     } 
     os_profile {
         computer_name = var.machines_names[count.index]
-        admin_username = "raph"
+        admin_username = "raphly"
     }
     os_profile_linux_config {
         disable_password_authentication = true
         ssh_keys {
-            path = "/home/raph/.ssh/authorized_keys"
+            path = "/home/raphly/.ssh/authorized_keys"
             key_data = var.public_key
         }
     }
