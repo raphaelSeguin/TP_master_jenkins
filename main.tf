@@ -28,7 +28,7 @@ resource "azurerm_network_interface" "nic" {
         name                          = "internal"
         subnet_id                     = azurerm_subnet.subnet[count.index].id
         private_ip_address_allocation = "Dynamic"
-        public_ip_address_id          = (count.index == 2 ? azurerm_public_ip.pub_ip.id : null)   
+        public_ip_address_id          =  azurerm_public_ip.pub_ip.id   
     }
 }
 
